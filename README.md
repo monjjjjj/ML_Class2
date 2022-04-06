@@ -36,3 +36,14 @@
      
   6. 如何選擇model？
      
+     要把training set分成training set ＆ validation set
+     
+  7. 如何去分set？ N-fold cross validation
+  
+     Training set -> Train+Train+Val，分成三份，與model去做交叉驗證
+    
+  8. Mismatch
+  
+     一般的overfitting可以用收集更多的資料來克服，但mismatch卻是訓練資料跟測試資料分布是不一樣的，所以訓練資料再增加也沒有幫助！     
+     
+     
