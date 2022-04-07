@@ -77,7 +77,22 @@
     
     -> 在Training上就有問題，所以不是Overfitting，是Optimization問題
     
-    -> WHY?
+    -> Why noise update is better for training?
+       
+         for full batch: 容易產生stuck
+       
+         for small batch: 因每次update所用的loss function是有差異的，對function1可能stuck，但對function2可能不會stuck，而能找到更低的loss
+
+ 4. Small batch is better on testing data
+    
+    local minima有分 好的minima(sharp minima) 跟 壞的minima(flat minima)
+    
+    large batch size可能導致sharp minima的產生，small batch size可能導致flat minima的產生
+   
+### Momentum: 另一個有可能可以對抗saddle point or local minima的技術
+1. momentum：update的方向是會考慮過去所有的gradient的總和 or Gradient的反方向 + 前一步移動的方向
+
+
     
     
 
