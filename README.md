@@ -7,7 +7,7 @@
            可以透過比較不同的模型來判斷現在的model夠不夠大！
            for testing data -> loss of 56 layers < loss of 20 layers
            for training data -> loss of 56 layers < loss of 20 layers 
-           不是因為model bias也不是overfitting, 而是optimization做得不夠好！
+           不是因為model bias跟overfitting, 而是optimization做得不夠好！
            
   3. Small loss on training data + large loss on testing data -> overfitting
  
@@ -47,5 +47,14 @@
      一般的overfitting可以用收集更多的資料來克服，但mismatch卻是訓練資料跟測試資料分布是不一樣的，所以訓練資料再增加也沒有幫助！ 
      
      如何判斷是否為mismatch？ 根據對資料的理解，去看訓練資料與測試資料的方式，才能判斷是否為mismatch
+
+## When Gradient Is Small: Local Minimum and Saddle Point
+### 如果optimization失敗的時候怎麼辦？
+ 1. Saddle point: gradient=0 but not local minima nor local maxima
+ 2. critical point: all points of gradient=0
+    
+    loss無法再下降是因為可能卡在critical point(有可能是在local minima or saddle point)
+ 3. Hessian不只可以告訴我們現在的critical point是否為saddle point，也能指出參數可以update的方向，而不用看gradient
+ 4. 在低維空間看起來是local minima，但在高維空間有可能就變成saddle point
      
      
