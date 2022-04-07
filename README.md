@@ -56,5 +56,30 @@
     loss無法再下降是因為可能卡在critical point(有可能是在local minima or saddle point)
  3. Hessian不只可以告訴我們現在的critical point是否為saddle point，也能指出參數可以update的方向，而不用看gradient
  4. 在低維空間看起來是local minima，但在高維空間有可能就變成saddle point
+
+## Tips for Training: Batch and Momentum
+### 為什麼training的時候要用batch?
+ 1. 在分資料時會用shuffle，常見的作法是在每一個Epoch開始時重新分一次Batch
+ 2. 為什麼要用batch？
+    
+    large batch: 全部的資料當成一個batch，要把所有的資料看完才能計算loss跟gradient，才可update一次參數，較穩定
+    
+    small batch: batch size=1, 只要看一筆資料就能update一次參數，較不穩定（亂槍打鳥型）
+    
+    若考慮平行運算的話，large batch計算loss & gradient進而update參數所花的時間不一定比較長。
+    
+    但GPU的平行運算能力仍是有限，所以當batch size太大的時候，運算的時間還是會增加！
+ 3. Noisy gradient反而可以幫助training
+ 
+    在兩個不同的模型上做實驗，發現在兩者上都是當Batch Size越大，training的結果越差。
+    
+    -> 同樣的模型，所以Function是一樣的，不是Model Bias問題
+    
+    -> 在Training上就有問題，所以不是Overfitting，是Optimization問題
+    
+    -> WHY?
+    
+    
+
      
      
