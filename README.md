@@ -125,6 +125,19 @@
 6. 最常用的optimization策略 -> Adam
 
 ## Loss Function: Classification
+1. 使用one-hot vector來表示分類的話，就沒有class1跟class2比較接近，或class1跟class3比較遠的問題！
+   
+   與單純使用數字來表示不同，one-hot vector表示的話，class之間彼此的距離都相同！
+2. 為什麼要加上softmax?
+   y hat裡面的值只有0跟1，但y的值是任意數值 -> 透過Softmax使y的值變成0與1之間，容易與y hat計算相似度!
+   但如果只有兩個class的時候，就不套用softmax，而是直接取sigmoid
+3. Cross-entropy?
+   Minimizing cross-entropy 其實就是 maximizing likelihood (啥是likelihood？？？)
+4. 以optimization的角度來說，cross-entropy比mean square error更適合用在分類上！
+   soft max跟cross entropy往往是被綁在一起的（在pytorch裡就是！）
+5. loss function也會影響training的難易度！
+
+
    
    
 
