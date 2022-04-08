@@ -92,6 +92,42 @@
 ### Momentum: 另一個有可能可以對抗saddle point or local minima的技術
 1. momentum：update的方向是會考慮過去所有的gradient的總和 or Gradient的反方向 + 前一步移動的方向
 
+## Tips for Training: Adaptive Learning Rate
+### Critical point不一定是訓練network時最大的障礙
+1. 當loss不再下降的時候，並不代表gradient變得很小，所以要去確認gradient的大小
+
+   從geadient的向量圖可以看到，即便loss已經很小了，但gradient仍在震盪
+   
+   可能原因：Gradient在Error suface的山谷間震盪，所以不是因為卡在critical point！
+
+2. Convex的error surface：等高線是橢圓形的
+   
+   使用Gradient descend時，
+		 
+   Learning  Rate大->步伐太大，會在山谷間震盪
+		 
+   Learning  Rate小->步伐太小，幾乎不會前進，難以走到終點
+
+3. 如何把gradient descent做得更好呢？
+
+   Learning rate應該要為每一個參數客製化，要將原本的gradient descent的式子修改一下！
+   
+       原則：
+         若在某個方向很平坦→Learning  Rate大一點，跑得快
+         
+         若在某個方向很陡峭→Learning  Rate小一點，走得穩
+         
+4. Used in Adagrad
+   smaller sigma(smaller gradient) -> large step; larger sigma(larger gradient) -> small step
+5. 我們期待即便在同個參數、同個方向，learning rate也是能動態調整的！
+   
+   使用RMSProp! 可以去調整每個gradient所佔的比例！
+6. 最常用的optimization策略 -> Adam
+
+## Loss Function: Classification
+   
+   
+
 
     
     
