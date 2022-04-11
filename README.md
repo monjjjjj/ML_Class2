@@ -81,7 +81,9 @@
        
          for full batch: 容易產生stuck
        
-         for small batch: 因每次update所用的loss function是有差異的，對function1可能stuck，但對function2可能不會stuck，而能找到更低的loss
+         for small batch: 因每次update所用的loss function是有差異的，對function1可能stuck，但對function2可能
+                          
+			  不會stuck，而能找到更低的loss
 
  4. Small batch is better on testing data
     
