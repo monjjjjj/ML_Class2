@@ -26,7 +26,7 @@
      
          若給model太多限制，會造成model bias
      
-     (2.a) 如fully connected有較大的彈性，CNN則有一些限制，所以在影像辨識上處理得較佳
+     (2.a) 如fully connected有較大的彈性，CNN則有一些限制，所以CNN在影像辨識上處理得較佳!
      
      (3) less features, early stopping, regularization, dropout 等
   
