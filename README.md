@@ -119,7 +119,8 @@
          
          若在某個方向很陡峭→Learning  Rate小一點，走得穩
          
-4. Used in Adagrad
+4. Used in Adagrad：
+
    smaller sigma(smaller gradient) -> large step; larger sigma(larger gradient) -> small step
 5. 我們期待即便在同個參數、同個方向，learning rate也是能動態調整的！
    
